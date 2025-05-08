@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 
 @customElement('usbe-alert')
 export class UsbeAlert extends LitElement {
-  @property() type: 'info' | 'success' | 'error' = 'info';
+  @property({ reflect: true }) type: 'info' | 'success' | 'error' = 'info'; // 🔥 This is critical
   @property() message = '';
 
   static styles = css`
