@@ -11,11 +11,12 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "outDir": "dist",
-    "sourceMap": true,
-    "inlineSources": true,
-    "rootDir": "./src",
     "declaration": true,
+    "emitDeclarationOnly": true,         // ✅ Only emit .d.ts files
+    "sourceMap": false,                  // ❌ Optional: disable if you don’t need them
+    "inlineSources": false,
     "incremental": true,
+    "rootDir": "./src",
     "skipLibCheck": true
   },
   "include": ["src"]

@@ -1,30 +1,74 @@
-<!doctype html>
-<html lang="en-GB">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <style>
-    body {
-      background: #fafafa;
-    }
-  </style>
-</head>
-<body>
-  <div id="demo"></div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>USBE Component Demo</title>
+    <script type="module" src="../dist/usbe-components.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2rem;
+        background-color: #f9f9f9;
+        line-height: 1.6;
+      }
 
-  <script type="module">
-    import { html, render } from 'lit';
-    import '../dist/src/usbe-component.js';
+      section {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
 
-    const header = 'Hello owc World!';
-    render(
-      html`
-        <usbe-component .header=${header}>
-          some light-dom
-        </usbe-component>
-      `,
-      document.querySelector('#demo')
-    );
-  </script>
-</body>
+      h2 {
+        margin-top: 0;
+      }
+
+      usbe-card,
+      usbe-input,
+      usbe-alert,
+      usbe-select,
+      usbe-dialog {
+        display: block;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>USBE Components Demo</h1>
+
+    <section>
+      <h2>&lt;usbe-button&gt;</h2>
+      <usbe-button></usbe-button>
+    </section>
+
+    <section>
+      <h2>&lt;usbe-card&gt;</h2>
+      <usbe-card title="Demo Card" content="This is a Lit card.">
+        <usbe-button></usbe-button>
+      </usbe-card>
+    </section>
+
+    <section>
+      <h2>&lt;usbe-input&gt;</h2>
+      <usbe-input label="First Name"></usbe-input>
+    </section>
+
+    <section>
+      <h2>&lt;usbe-alert&gt;</h2>
+      <usbe-alert type="success" message="Operation successful!"></usbe-alert>
+    </section>
+
+    <section>
+      <h2>&lt;usbe-select&gt;</h2>
+      <!-- NOTE: For this component to render options, it should handle slotting or JS logic -->
+      <usbe-select></usbe-select>
+    </section>
+
+    <section>
+      <h2>&lt;usbe-dialog&gt;</h2>
+      <usbe-dialog></usbe-dialog>
+    </section>
+  </body>
 </html>

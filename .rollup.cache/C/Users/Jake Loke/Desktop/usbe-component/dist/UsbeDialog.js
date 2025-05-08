@@ -1,12 +1,11 @@
+import { __decorate } from "tslib";
 import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import '@material/web/dialog/dialog.js';
 import '@material/web/button/text-button.js';
-
-@customElement('usbe-dialog')
-export class UsbeDialog extends LitElement {
-  render() {
-    return html`
+let UsbeDialog = class UsbeDialog extends LitElement {
+    render() {
+        return html `
       <md-text-button @click=${this.openDialog}>Open Dialog</md-text-button>
 
       <md-dialog id="dialog">
@@ -18,10 +17,13 @@ export class UsbeDialog extends LitElement {
         </div>
       </md-dialog>
     `;
-  }
-
-  openDialog() {
-    const dialog = this.shadowRoot?.getElementById('dialog') as HTMLElement & { show: () => void };
-    dialog?.show();
-  }
-}
+    }
+    openDialog() {
+        const dialog = this.shadowRoot?.getElementById('dialog');
+        dialog?.show();
+    }
+};
+UsbeDialog = __decorate([
+    customElement('usbe-dialog')
+], UsbeDialog);
+export { UsbeDialog };
