@@ -3,18 +3,18 @@
   "description": "Webcomponent usbe-component following open-wc recommendations",
   "license": "MIT",
   "author": "usbe-component",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
-  "main": "dist/src/index.js",
-  "module": "dist/src/index.js",
+  "main": "dist/usbe-components.js",
+  "module": "dist/usbe-components.js",
   "exports": {
-    ".": "./dist/src/index.js",
-    "./usbe-component.js": "./dist/src/usbe-component.js"
+    ".": "./dist/usbe-components.js"
   },
   "scripts": {
+    "build": "rollup -c",
+    "postinstall": "npm run build",
     "analyze": "cem analyze --litelement",
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"web-dev-server\"",
-    "build": "rollup -c",
     "prepublish": "tsc && npm run analyze -- --exclude dist",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
@@ -60,18 +60,11 @@
   "customElements": "custom-elements.json",
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
-    "extends": [
-      "@open-wc",
-      "prettier"
-    ],
-    "plugins": [
-      "@typescript-eslint"
-    ],
+    "extends": ["@open-wc", "prettier"],
+    "plugins": ["@typescript-eslint"],
     "rules": {
       "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": [
-        "error"
-      ],
+      "@typescript-eslint/no-unused-vars": ["error"],
       "import/no-unresolved": "off",
       "import/extensions": [
         "error",
@@ -87,9 +80,6 @@
     "arrowParens": "avoid"
   },
   "lint-staged": {
-    "*.ts": [
-      "eslint --fix",
-      "prettier --write"
-    ]
+    "*.ts": ["eslint --fix", "prettier --write"]
   }
 }
