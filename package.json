@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "postinstall": "npm run build",
+    "postinstall": "",
     "analyze": "cem analyze --litelement",
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"web-dev-server\"",
     "prepublish": "tsc && npm run analyze -- --exclude dist",
