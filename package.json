@@ -39,6 +39,7 @@
     "@storybook/addon-essentials": "^7.6.20",
     "@storybook/addon-links": "^7.6.20",
     "@storybook/web-components": "^7.6.20",
+    "@storybook/web-components-vite": "^7.6.20",
     "@types/mocha": "^10.0.7",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
@@ -52,6 +53,8 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "rollup": "^4.40.2",
     "storybook": "^7.6.20",
     "tslib": "^2.6.3",
@@ -60,11 +63,18 @@
   "customElements": "custom-elements.json",
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
-    "extends": ["@open-wc", "prettier"],
-    "plugins": ["@typescript-eslint"],
+    "extends": [
+      "@open-wc",
+      "prettier"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ],
     "rules": {
       "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": ["error"],
+      "@typescript-eslint/no-unused-vars": [
+        "error"
+      ],
       "import/no-unresolved": "off",
       "import/extensions": [
         "error",
@@ -80,6 +90,9 @@
     "arrowParens": "avoid"
   },
   "lint-staged": {
-    "*.ts": ["eslint --fix", "prettier --write"]
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
