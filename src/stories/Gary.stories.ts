@@ -1,4 +1,4 @@
-import '../src/Gary'; 
+import '../Gary'; 
 
 import type { Meta, StoryObj } from '@storybook/web-components';
 
