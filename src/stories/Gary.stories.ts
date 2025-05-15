@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/web-components';
 
 const meta: Meta = {
   title: 'Components/MyBaseElement',
-  component: 'my-base-element',
+  component: 'gary-element',
   parameters: {
     layout: 'centered',
   },

@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import '@material/web/button/filled-button.js';
 
-@customElement('gary')
+@customElement('gary-element')
 export class BaseElement extends LitElement {
   protected override createRenderRoot(): ShadowRoot {
     const root = this.attachShadow({ mode: 'open' });
