@@ -1,4 +1,5 @@
-import '../BaseElement'; // Make sure the import path is correct
+import '../src/Gary'; 
+
 import type { Meta, StoryObj } from '@storybook/web-components';
 
 const meta: Meta = {
